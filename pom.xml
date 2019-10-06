@@ -67,6 +67,7 @@
 		<finalName>microservicecloud</finalName>
 		<resources>
 			<resource>
+				<!-- 可以访问resources的内容 -->
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
@@ -77,6 +78,7 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<delimiters>
+						<!-- 可以读取以$开头的内容,页面info超链接内容 -->
 						<delimit>$</delimit>
 					</delimiters>
 				</configuration>
@@ -88,5 +90,7 @@
 		<module>microservicecloud-provider-dept-8001</module>
 		<module>microservicecloud-consumer-dept-80</module>
 		<module>microservicecloud-eureka-7001</module>
+		<module>microservicecloud-eureka-7002</module>
+		<module>microservicecloud-eureka-7003</module>
 	</modules>
 </project>
