@@ -1,0 +1,28 @@
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.dayeliu.cloud.entities
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+spring:
+  application:
+    name: microservicecloud-dept  #对外暴露的名字
+  datasource:
+   type: com.alibaba.druid.pool.DruidDataSource
+   driver-class-name: org.gjt.mm.mysql.Driver 
+   url: jdbc:mysql://localhost:3306/clounddb01
+   username: root
+   password: root
+   dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5                  #最大连接数
+      max-wait-millis: 200
+eureka:
+  client: #服务端注册进eureka服务列表
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservicedept8001 #修改页面status服务显示名称
+    prefer-ip-address: true #左下角显示主机ip
