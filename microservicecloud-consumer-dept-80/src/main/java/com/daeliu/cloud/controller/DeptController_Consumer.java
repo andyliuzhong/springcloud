@@ -18,7 +18,10 @@ import com.dayeliu.cloud.entities.Dept;
  */
 @RestController
 public class DeptController_Consumer {
-	private static final String REST_URL_PREFIX = "http://localhost:8001";
+	//单机版微服务访问
+	//private static final String REST_URL_PREFIX = "http://localhost:8001";
+	//通过微服务名作为访问地址
+	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 	@Autowired
 	private RestTemplate restTemplate;
 	//getMapping不支持@RequestBody

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.dayeliu.cloud.entities
@@ -11,7 +11,7 @@ spring:
   datasource:
    type: com.alibaba.druid.pool.DruidDataSource
    driver-class-name: org.gjt.mm.mysql.Driver 
-   url: jdbc:mysql://localhost:3306/clounddb01
+   url: jdbc:mysql://localhost:3306/clounddb02
    username: root
    password: root
    dbcp2:
@@ -25,7 +25,7 @@ eureka:
       #单机defaultZone: http://127.0.0.1:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: microservicedept8001 #修改页面status服务显示名称
+    instance-id: microservicedept8002 #修改页面status服务显示名称
     prefer-ip-address: true #左下角显示主机ip
 info:
   app.name: dayeliu-microservicecloud

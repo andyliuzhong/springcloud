@@ -1,14 +1,17 @@
-package com.daeliu.cloud;
+package com.dayeliu.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-//eureka客户端  集成Ribbon
+//Eureka 客户端
 @EnableEurekaClient
-public class Consumer80_App {
+//服務發現
+@EnableDiscoveryClient
+public class DeptProvider8002_App {
 	public static void main(String[] args) {
-		SpringApplication.run(Consumer80_App.class, args);
+		SpringApplication.run(DeptProvider8002_App.class, args);
 	}
 }
