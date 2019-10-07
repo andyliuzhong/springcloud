@@ -1,4 +1,4 @@
-package com.daeliu.cloud.cfg.beans;
+package com.dayeliu.cloud.cfg.beans;
 
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
