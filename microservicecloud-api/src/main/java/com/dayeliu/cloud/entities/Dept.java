@@ -21,9 +21,9 @@ import lombok.experimental.Accessors;
 //get set
 @Data
 //链式
-@Accessors
+@Accessors(chain = true)
 public class Dept implements Serializable {
-	private Integer deptno;// 部门id
+	private Long deptno;// 部门id
 	private String dname;// 部门名称
 	// 使用的数据库 不同微服务使用不同的数据库
 	private String db_source; 

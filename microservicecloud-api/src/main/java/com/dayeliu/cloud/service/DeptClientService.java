@@ -15,7 +15,9 @@ import com.dayeliu.cloud.entities.Dept;
  *
  */
 //注解
-@FeignClient(value="MICROSERVICECLOUD-DEPT")
+//@FeignClient(value="MICROSERVICECLOUD-DEPT")
+//集成hystrix 自定义fallback
+@FeignClient(value="MICROSERVICECLOUD-DEPT",fallbackFactory=DeptClientFailbackFactory.class)
 public interface DeptClientService {
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
 	public Dept get(@PathVariable("id") long id);

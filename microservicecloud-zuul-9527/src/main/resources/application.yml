@@ -1,0 +1,26 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: microservicecloud-zuul-9527
+#zuul 映射
+zuul:
+  prefix: /dayeliu #访问统一前缀
+  ignored-services: microservicecloud-dept #屏蔽原服务访问
+  #ignored-services: "*" #屏蔽多个
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+eureka:
+  client: #服务端注册进eureka服务列表
+    service-url:
+      #单机defaultZone: http://127.0.0.1:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: getway-9527 #修改页面status服务显示名称
+    prefer-ip-address: true #左下角显示主机ip
+info:
+  app.name: dayeliu-microservicecloud
+  company.name: www.dayeliu.com
+  build.artifactId: $project.artifactId$ #父工程中配plugins配置对应
+  build.version: $project.version$
